@@ -10,6 +10,29 @@ sheet_args = (
     markerstrokewidth = 0,
 )
 
+slide_args = (
+    fglegend = plot_color(colorant"#225", 0.1),
+    bglegend = plot_color(:white, 0.9),
+    background_color = :transparent,
+    foreground_color=:black,
+    gridcolor = colorant"#225",
+    gridlinewidth = 2,
+    minorgridcolor = colorant"#225",
+    framestyle = :grid,
+    minorgrid = false,
+    linewidth = 5.2,
+    markersize = 12,
+    markerstrokewidth = 2,
+    xguidefontsize=22,
+    yguidefontsize=22,
+    legendfontsize=18,
+    xtickfontsize=18,
+    ytickfontsize=18,
+    titlefontsize=26,
+    dpi=350,
+)
+
+
 #= NOTE ========================================================================
 Colors are taken from https://personal.sron.nl/~pault/
 ===============================================================================#
@@ -61,6 +84,12 @@ _themes[:mute] = PlotTheme(;
     palette = mute_palette,
     colorgradient = reverse(ylorbr_gradient),
     sheet_args...
+)
+
+_themes[:slideMute] = PlotTheme(;
+    palette = mute_palette,
+    colorgradient = reverse(ylorbr_gradient),
+    slide_args...
 )
 
 # ------------------------------------------------------------------------------
@@ -128,3 +157,11 @@ _themes[:bright] = PlotTheme(;
     colorgradient = reverse(iridescent_gradient),
     sheet_args...
 )
+
+_themes[:slideBright] = PlotTheme(;
+    palette = bright_palette,
+    colorgradient = reverse(iridescent_gradient),
+    slide_args...
+)
+
+
